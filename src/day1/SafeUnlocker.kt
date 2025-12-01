@@ -12,11 +12,6 @@ class SafeUnlocker {
         rotate(amount, input.contains('R'))
     }
 
-    fun checkClick() {
-        if (dial.value == 0)
-            clicks++
-    }
-
     fun rotate(amount : Int, right : Boolean) {
         for (i in 1..amount) {
             dial = if (right)
@@ -25,6 +20,11 @@ class SafeUnlocker {
                 dial.rotateDialLeft()
             checkClick()
         }
+    }
+
+    fun checkClick() {
+        if (dial.value == 0)
+            clicks++
     }
 
     fun parseInput() : Int {
