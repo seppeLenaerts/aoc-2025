@@ -9,22 +9,22 @@ class SafeUnlocker {
 
     fun parseLine(input: String) {
         val amount : Int = input.drop(1).toInt()
-        if (input.contains('R')) {
-            for (i in 1..amount) {
-                dial = dial.rotateDialRight()
-                checkClick()
-            }
-        } else {
-            for (i in 1..amount) {
-                dial = dial.rotateDialLeft()
-                checkClick()
-            }
-        }
+        rotate(amount, input.contains('R'))
     }
 
     fun checkClick() {
         if (dial.value == 0)
             clicks++
+    }
+
+    fun rotate(amount : Int, right : Boolean) {
+        for (i in 1..amount) {
+            dial = if (right)
+                dial.rotateDialRight()
+            else
+                dial.rotateDialLeft()
+            checkClick()
+        }
     }
 
     fun parseInput() : Int {
