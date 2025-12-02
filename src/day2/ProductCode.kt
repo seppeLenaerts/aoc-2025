@@ -11,8 +11,8 @@ data class ProductCode(val startId : Id, val endId: Id) {
             Path("/Users/seppe.lenaerts/Documents/Repo/aoc/src/day2/input").forEachLine {
                 it.split(',')
                     .map { s -> parseCode(s.split('-')) }
+                    .forEach { code -> result.plus(code) }
             }
-            //TODO: Fix return of result
             return result
         }
 
@@ -25,7 +25,7 @@ data class ProductCode(val startId : Id, val endId: Id) {
         if (startId.toInt() > endId.toInt()) {
             return listOf()
         }
-        val result : List<Id> = listOf()
+        val result : List<Id> = mutableListOf()
         for (i in startId.toInt()..endId.toInt()) {
             result.plus(Id(i.toString()))
         }
