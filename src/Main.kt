@@ -15,6 +15,6 @@ fun day1() {
 }
 
 fun day2() {
-    val productCodes = ProductCode.scanInput()
-    print(productCodes)
+    val mismatches = ProductCode.scanInput().map { it.validate() }.reduce { sum, mismatched -> sum + mismatched }
+    print(mismatches)
 }
