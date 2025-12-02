@@ -20,6 +20,10 @@ data class ProductCode(val startId: Id, val endId: Id) {
     fun validate(): Long {
         return LongRange(startId.toLong(), endId.toLong())
             .map { Id(it.toString()) }
-            .fold(0) { acc, id -> if (id.isInvalid()) acc + id.toLong() else acc }
+            .fold(0) { acc, id ->
+                if (id.isInvalid()) {
+                    acc + id.toLong()
+                } else acc
+            }
     }
 }
