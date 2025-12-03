@@ -4,7 +4,7 @@ import java.io.File
 
 class JoltageMeter {
 
-    fun measureTotal(): Int {
+    fun measureTotal(): Long {
         val banks = File("D:\\Tools\\Repo\\aoc\\src\\day3\\input").readLines().map { Bank.createBank(it) }
         return banks.map { it.findHighestCombo() }.sumOf { it }
     }

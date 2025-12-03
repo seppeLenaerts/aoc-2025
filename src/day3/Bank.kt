@@ -8,13 +8,13 @@ data class Bank(val batteries: List<Battery>) {
         }
     }
 
-    fun findHighestCombo() : Int {
-        return IntRange(1, batteries.size - 1)
+    fun findHighestCombo() : Long {
+        return IntRange(0, batteries.size - 12)
             .maxOf {
-                n -> batteries.subList(n, batteries.size).maxOf {
-                    b -> BatteryCombo(batteries[n - 1], b).totalJoltage()
-                }
+                n -> BatteryCombo(batteries.subList(n, n+11)).totalJoltage()
             }
+
+        batteries.map { it.joltage }.find {  }
     }
 
 }
