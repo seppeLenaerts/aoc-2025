@@ -12,7 +12,6 @@ data class Bank(val batteries: List<Battery>) {
 
     fun findHighestCombo() : Long {
         val findLargestLeftmostIndex = findLargestLeftmostIndex(12, batteries)
-        println("findLargestLeftmostIndex = ${findLargestLeftmostIndex}")
         return findLargestLeftmostIndex
     }
 
