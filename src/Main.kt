@@ -3,7 +3,7 @@ import day2.ProductCode
 import day3.JoltageMeter
 
 fun main() {
-    day3()
+    day2()
 }
 
 fun day1() {
