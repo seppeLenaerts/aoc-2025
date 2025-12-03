@@ -1,5 +1,7 @@
 package day3
 
+import kotlin.math.pow
+
 data class Bank(val batteries: List<Battery>) {
 
     companion object {
@@ -9,12 +11,29 @@ data class Bank(val batteries: List<Battery>) {
     }
 
     fun findHighestCombo() : Long {
-        return IntRange(0, batteries.size - 12)
-            .maxOf {
-                n -> BatteryCombo(batteries.subList(n, n+11)).totalJoltage()
-            }
+        val findLargestLeftmostIndex = findLargestLeftmostIndex(12, batteries)
+        println("findLargestLeftmostIndex = ${findLargestLeftmostIndex}")
+        return findLargestLeftmostIndex
+    }
 
-        batteries.map { it.joltage }.find {  }
+    fun findLargestLeftmostIndex(todo: Int, remainingBatteries: List<Battery>) : Long {
+        if (todo == 0) {
+            return 0
+        }
+        val joltages = remainingBatteries.map { it.joltage }
+        var largest = 9
+        while (largest > 0) {
+            val largestIndex = joltages.indexOf(largest)
+            if (largestIndex >= 0 && remainingBatteries.size - largestIndex >= todo) {
+                return joltages[largestIndex] * (10.0.pow(todo.toDouble() - 1).toLong()) +
+                        findLargestLeftmostIndex(
+                            todo - 1,
+                            remainingBatteries.subList(largestIndex + 1, remainingBatteries.size)
+                        )
+            }
+            largest--
+        }
+        error("Shouldn't happen")
     }
 
 }
