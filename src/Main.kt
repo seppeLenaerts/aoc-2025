@@ -1,9 +1,10 @@
 import day1.SafeUnlocker
 import day2.ProductCode
 import day3.JoltageMeter
+import day4.Grid
 
 fun main() {
-    day2()
+    day4()
 }
 
 fun day1() {
@@ -19,4 +20,8 @@ fun day2() {
 fun day3() {
     val joltageMeter = JoltageMeter()
     println(joltageMeter.measureTotal())
+}
+
+fun day4() {
+    println(Grid.parse().howMany())
 }
