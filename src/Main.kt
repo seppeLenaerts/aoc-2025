@@ -28,5 +28,5 @@ fun day4() {
 }
 
 fun day5() {
-    println(InventoryManager.parseInput().parseInventoryLines())
+    println(InventoryManager.parseInput().parseTotalIds())
 }
