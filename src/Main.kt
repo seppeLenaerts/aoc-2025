@@ -2,9 +2,10 @@ import day1.SafeUnlocker
 import day2.ProductCode
 import day3.JoltageMeter
 import day4.Grid
+import day5.InventoryManager
 
 fun main() {
-    day4()
+    day5()
 }
 
 fun day1() {
@@ -24,4 +25,8 @@ fun day3() {
 
 fun day4() {
     println(Grid.parse().howMany())
+}
+
+fun day5() {
+    println(InventoryManager.parseInput().parseInventoryLines())
 }
