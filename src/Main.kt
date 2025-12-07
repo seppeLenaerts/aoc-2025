@@ -40,5 +40,5 @@ fun day6() {
 
 fun day7() {
     val tachyonParser = TachyonParser.create()
-    println(tachyonParser.splitBeams())
+    println(tachyonParser.partTwo())
 }
