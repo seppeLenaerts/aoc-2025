@@ -3,9 +3,10 @@ import day2.ProductCode
 import day3.JoltageMeter
 import day4.Grid
 import day5.InventoryManager
+import day6.Calculator
 
 fun main() {
-    day5()
+    day6()
 }
 
 fun day1() {
@@ -29,4 +30,9 @@ fun day4() {
 
 fun day5() {
     println(InventoryManager.parseInput().parseTotalIds())
+}
+
+fun day6() {
+    val calculator = Calculator.create()
+    println(calculator.solve())
 }

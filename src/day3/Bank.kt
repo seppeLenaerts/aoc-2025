@@ -34,5 +34,4 @@ data class Bank(val batteries: List<Battery>) {
         }
         error("Shouldn't happen")
     }
-
 }
