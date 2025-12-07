@@ -4,9 +4,10 @@ import day3.JoltageMeter
 import day4.Grid
 import day5.InventoryManager
 import day6.Calculator
+import day7.TachyonParser
 
 fun main() {
-    day6()
+    day7()
 }
 
 fun day1() {
@@ -35,4 +36,9 @@ fun day5() {
 fun day6() {
     val calculator = Calculator.create()
     println(calculator.solve())
+}
+
+fun day7() {
+    val tachyonParser = TachyonParser.create()
+    println(tachyonParser.splitBeams())
 }
