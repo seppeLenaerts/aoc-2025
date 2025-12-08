@@ -1,8 +1,6 @@
 package day7
 
 import java.io.File
-import java.math.BigDecimal
-import java.math.BigInteger
 
 data class TachyonParser(val lines: MutableList<MutableList<Char>>) {
 
