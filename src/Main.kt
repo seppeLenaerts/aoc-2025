@@ -5,9 +5,10 @@ import day4.Grid
 import day5.InventoryManager
 import day6.Calculator
 import day7.TachyonParser
+import day8.JunctionBoxes
 
 fun main() {
-    day7()
+    day8()
 }
 
 fun day1() {
@@ -41,4 +42,11 @@ fun day6() {
 fun day7() {
     val tachyonParser = TachyonParser.create()
     println(tachyonParser.partTwo())
+}
+
+fun day8() {
+    val juncBox = JunctionBoxes.create()
+    val connections = juncBox.createConnections()
+    juncBox.linkConnections(connections)
+    println("${juncBox.multBigThree()}")
 }
